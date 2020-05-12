@@ -1,0 +1,67 @@
+body {
+	font-family: Arial;
+	height: 100vh;
+}
+
+/*. background e .conteudo são classes que precisei criar para conseguir desfocar o fundo da página.
+Encontrei um modelo aqui: https://www.guj.com.br/t/apllicando-filtro-ao-background-blur/340325/2
+*/
+.background {
+	background-repeat:no-repeat;
+    position: fixed;
+    z-index: 1;
+
+    display: block;
+    background-image: url('http://getwallpapers.com/wallpaper/full/7/c/2/288202.jpg');
+    height: 1000px;
+    width: 1500px;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
+
+.conteudo {
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    position: fixed;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.menu {
+	background-color: transparent;
+	border-radius: 0px 25px 0px 25px;
+	border-style: double;
+	border-color: #483D8B;
+}
+
+.menu ul {
+	display: flex;
+	justify-content: space-around;
+}
+
+.menu li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #483D8B;
+}
+
+a:hover {
+	color: #87CEFA;
+}
+
+.site-subtitle,
+.site-title {
+	text-align: center;
+	color: #E0FFFF;
+}
+
+.site-subtitle {
+	font-style: italic;
+}
