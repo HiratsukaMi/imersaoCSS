@@ -3,6 +3,34 @@ body {
 	height: 100vh;
 }
 
+/* se a tela tiver pelo menos 400px vai carregar estes estilos */
+@media (min-width: 400px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* breakpoint */
+@media (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* breakpoint */
+@media (min-width: 1200px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /*. background e .conteudo são classes que precisei criar para conseguir desfocar o fundo da página.
 Encontrei um modelo aqui: https://www.guj.com.br/t/apllicando-filtro-ao-background-blur/340325/2
 */
@@ -13,8 +41,8 @@ Encontrei um modelo aqui: https://www.guj.com.br/t/apllicando-filtro-ao-backgrou
 
     display: block;
     background-image: url('http://getwallpapers.com/wallpaper/full/7/c/2/288202.jpg');
-    height: 1000px;
-    width: 1500px;
+    height: 100vh;
+    width: 150vw;
     -webkit-filter: blur(5px);
     filter: blur(5px);
     -moz-filter: blur(5px);
@@ -33,9 +61,9 @@ Encontrei um modelo aqui: https://www.guj.com.br/t/apllicando-filtro-ao-backgrou
 
 .menu {
 	background-color: transparent;
-	border-radius: 0px 25px 0px 25px;
-	border-style: double;
-	border-color: #483D8B;
+	position: fixed;
+	width: 100vw;
+	top: 0;
 }
 
 .menu ul {
@@ -47,12 +75,25 @@ Encontrei um modelo aqui: https://www.guj.com.br/t/apllicando-filtro-ao-backgrou
 	list-style: none;
 }
 
+.menu a {
+	border-radius: 0px 25px 25px 25px;
+	border-style: solid;
+	border-color: /*#483D8B*/ #F0F8FF;
+	background-color: white;
+	display: block;
+	padding: 10px 20px;
+}
+
 a {
 	text-decoration: none;
 	color: #483D8B;
 }
 
 a:hover {
+	border-radius: 0px 25px 25px 25px;
+	border-style: solid;
+	border-color: #483D8B;
+	background-color: #F0F8FF;
 	color: #87CEFA;
 }
 
@@ -60,6 +101,10 @@ a:hover {
 .site-title {
 	text-align: center;
 	color: #E0FFFF;
+}
+
+.site-title {
+  font-size: 4em;
 }
 
 .site-subtitle {
