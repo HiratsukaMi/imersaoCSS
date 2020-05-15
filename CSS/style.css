@@ -11,7 +11,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
-	color: #000080;
+	color: /*#000080*/ #E0FFFF;
 }
 
 /* se a tela tiver pelo menos 400px vai carregar estes estilos */
@@ -43,13 +43,18 @@ header {
   flex-wrap: wrap;
 }
 
+.fundo {
+	background: rgba(0, 0, 0, 0.3);
+	width: 100vw;
+}
+
 .menu {
 	position: fixed;
 	width: 100vw;
 	top: 0;
 	font-family: 'Indie Flower', cursive;
 	z-index: 1;
-	background-color: white;
+	background: rgba(255, 255, 255, 0.3);
 }
 
 .menu ul {
@@ -72,19 +77,21 @@ header {
 	border-style: solid;
 	border-color: #483D8B;
 	background-color: #F0F8FF;
-	color: #87CEFA;
+	color: #483D8B;
 	font-family: 'VT323', monospace;
 }
 
 a {
 	text-decoration: none;
-	color: #483D8B;
+	color: #E0FFFF;
 }
 
 .site-subtitle,
 .site-title {
 	text-align: center;
-	color: /*#E0FFFF*/ #191970;
+	color: #E0FFFF;
+	/*background: rgba(0, 0, 0, 0.3);*/
+	width: 100vw;
 }
 
 .site-title {
@@ -97,12 +104,13 @@ a {
 	font-style: italic;
 	font-family: 'Indie Flower', cursive;
 	line-height: 1em;
+	padding-bottom: .5em;
 }
 
 .estudos,
 .contatos,
 .projetos {
-	background: rgba(10, 100, 100, 0.3);
+	
 }
 
 .estudos h2,
@@ -127,7 +135,6 @@ a {
 	.projetos {
 		padding: 3em 2em 2em;
 		height: 100vh;
-		background: rgba(10, 100, 100, 0.3);
 	}
 
 	.grid {
@@ -141,7 +148,6 @@ a {
 	.contatos,
 	.projetos {
 		padding: 2em;
-		background: rgba(10, 100, 100, 0.3);
 	}
 
 	.grid {
@@ -150,6 +156,7 @@ a {
 	}
 }
 
+.img-estudos,
 .img-projetos {
 	border-radius: 0px 25px 25px 25px;
 	height: 180px;
@@ -157,6 +164,7 @@ a {
 	width: 250px;
 }
 
-.portfolio figcaption {
+.estudos figcaption,
+.projetos figcaption {
 	font-weight: bold;
 }
