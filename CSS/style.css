@@ -1,6 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-	font-family: Arial;
-	height: 100vh;
+	font-family: 'Nova Mono', monospace;
+	height: 50vh;
+	background-image: url('http://getwallpapers.com/wallpaper/full/7/c/2/288202.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	color: #000080;
 }
 
 /* se a tela tiver pelo menos 400px vai carregar estes estilos */
@@ -29,41 +40,16 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/*. background e .conteudo são classes que precisei criar para conseguir desfocar o fundo da página.
-Encontrei um modelo aqui: https://www.guj.com.br/t/apllicando-filtro-ao-background-blur/340325/2
-*/
-.background {
-	background-repeat:no-repeat;
-    position: fixed;
-    z-index: 1;
-
-    display: block;
-    background-image: url('http://getwallpapers.com/wallpaper/full/7/c/2/288202.jpg');
-    height: 100vh;
-    width: 150vw;
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-}
-
-.conteudo {
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    position: fixed;
-    margin-left: 50px;
-    margin-right: 50px;
+  flex-wrap: wrap;
 }
 
 .menu {
-	background-color: transparent;
 	position: fixed;
 	width: 100vw;
 	top: 0;
+	font-family: 'Indie Flower', cursive;
+	z-index: 1;
+	background-color: white;
 }
 
 .menu ul {
@@ -76,12 +62,18 @@ Encontrei um modelo aqui: https://www.guj.com.br/t/apllicando-filtro-ao-backgrou
 }
 
 .menu a {
-	border-radius: 0px 25px 25px 25px;
-	border-style: solid;
-	border-color: /*#483D8B*/ #F0F8FF;
-	background-color: white;
 	display: block;
 	padding: 10px 20px;
+	text-decoration: none;
+}
+
+.menu a:hover {
+	border-radius: 0px 25px 25px 25px;
+	border-style: solid;
+	border-color: #483D8B;
+	background-color: #F0F8FF;
+	color: #87CEFA;
+	font-family: 'VT323', monospace;
 }
 
 a {
@@ -89,24 +81,82 @@ a {
 	color: #483D8B;
 }
 
-a:hover {
-	border-radius: 0px 25px 25px 25px;
-	border-style: solid;
-	border-color: #483D8B;
-	background-color: #F0F8FF;
-	color: #87CEFA;
-}
-
 .site-subtitle,
 .site-title {
 	text-align: center;
-	color: #E0FFFF;
+	color: /*#E0FFFF*/ #191970;
 }
 
 .site-title {
   font-size: 4em;
+  font-family: 'VT323', monospace;
+  line-height: 1.5em;
 }
 
 .site-subtitle {
 	font-style: italic;
+	font-family: 'Indie Flower', cursive;
+	line-height: 1em;
+}
+
+.estudos,
+.contatos,
+.projetos {
+	background: rgba(10, 100, 100, 0.3);
+}
+
+.estudos h2,
+.contatos h2,
+.projetos h2 {
+	font-family: 'VT323', monospace;
+	font-size: 3.5em;
+	margin-bottom: .5em;
+}
+
+.grid {
+	display: grid;
+	gap: 1em;
+	align-content: center;
+	justify-content: center;
+	text-align: center;
+}
+
+@media (min-width: 400px) {
+	.estudos,
+	.contatos,
+	.projetos {
+		padding: 3em 2em 2em;
+		height: 100vh;
+		background: rgba(10, 100, 100, 0.3);
+	}
+
+	.grid {
+		grid-template-columns: 280px 280px;
+		height: calc(100vh - 75px);
+	}
+}
+
+@media (min-width: 940px) {
+	.estudos,
+	.contatos,
+	.projetos {
+		padding: 2em;
+		background: rgba(10, 100, 100, 0.3);
+	}
+
+	.grid {
+		grid-template-columns: repeat(4, 280px);
+		height: calc(100vh - 4.5em - 75px);
+	}
+}
+
+.img-projetos {
+	border-radius: 0px 25px 25px 25px;
+	height: 180px;
+	object-fit: cover;
+	width: 250px;
+}
+
+.portfolio figcaption {
+	font-weight: bold;
 }
